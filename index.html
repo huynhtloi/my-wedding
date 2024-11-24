@@ -262,7 +262,8 @@
                                 <div class="alice-font subtext-font-weight" style="font-size: 1.4rem;">
                                     12.01.2025
                                 </div>
-                                <div class="alice-font subtext-font-weight" style="font-size: 19px; margin-bottom: 3rem;">
+                                <div class="alice-font subtext-font-weight"
+                                    style="font-size: 19px; margin-bottom: 3rem;">
                                     Nhằm ngày 13 tháng 12 năm Giáp Thìn
                                 </div>
                             </div>
@@ -353,8 +354,12 @@
                 </section>
                 <script>
                     document.addEventListener('DOMContentLoaded', () => {
-                        // Unix timestamp (in seconds) to count down to
-                        var eventDate = '1736640000';
+                        var targetDate = new Date('2025-01-12T01:30:00Z');
+
+                        var targetTimestamp = Math.floor(targetDate.getTime() / 1000);
+
+                        console.log(targetTimestamp);
+                        var eventDate = targetTimestamp;
 
                         // Set up FlipDown
                         var flipdown = new FlipDown(parseInt(eventDate), {
